@@ -1,0 +1,13 @@
+{% extends 'base.html'%} {% block content %}
+<div class="card text-center">
+    <div class="card-header"> Hello {{user.username}} !!!!</div>
+    <div class="card-body">
+        <h5 class="card-title">Welcome {{user.username}} to the auth world, You can logout Here!!!</h5>
+        <form action="{% url 'logout'%}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Logout" class="btn btn-info">
+
+        </form>
+    </div>
+</div>
+{%endblock%}
